@@ -38,7 +38,11 @@ function responseEnvelope(res, data, message = "Success", status = 200) {
         success: true, message, data, error: null,
     })  
 }
-
+function errorResponse(res, message, status, details = null){
+    return res.status(status).json({
+        success: false, message, data: null, error: details,
+    })  
+}
 
 
 
