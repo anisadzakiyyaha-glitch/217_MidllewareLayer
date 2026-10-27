@@ -150,3 +150,9 @@ app.delete("/biodata/:id", validateParams(idSchema), async (req, res) => {
     return responseEnvelope(res, 'Data berhasil dihapus', result.rows[0])
 })
 
+// if route tidak ditemukan
+app.use((req, res) => {
+    return errorResponse(res, 'Endpoint tidak ditemukan', 404)
+})
+
+
