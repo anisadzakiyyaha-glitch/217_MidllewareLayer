@@ -44,5 +44,16 @@ function errorResponse(res, message, status, details = null){
     })  
 }
 
+// Joi Validation Schema
+const biodataSchema = joi.object({
+    id: Joi.number().integer().positiv(),
+    nama: Joi.string().trim().min(2).max(100).required(),
+    nim: Joi.string().trim().min(5).max(20).required(),
+    kelas: Joi.string().trim().min(1).max(20).required(),
+})  
+
+
+
+
 
 
